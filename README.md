@@ -25,4 +25,10 @@ It is from https://hub.docker.com/_/jenkins/
 ## docker-compose.yml
 Yaml file composes jenkins-master and jenkins-slave to do test.
 
-[USER NAME] of volumes of yaml file have to be change to your user
+[your home path] of volumes of yaml file have to be change to your path which you want to store jenkins' data to
+
+## common.yml
+Separate setting of jenkins-master and jenkins-slave to common.yml to simplify docker-compose.yml
+
+## jenkins-master setting on web
+ssh root@<slave_ip> java -jar /root/bin/slave.jar

@@ -1,17 +1,19 @@
 version: '2'
 services:
   jenkins-master:
-    image: cjhuang/jenkins
-    volumes:
-      - /home/[USER NAME]/Desktop/jenkins/data:/var/jenkins_home
+    extends:
+      file: common.yml
+      service: jenkins-master
+    depends_on:
+      - "jenkins-slave"
     networks:
       my_net:
         ipv4_address: 172.18.0.2
-    depends_on:
-      - "jenkins-slave"
 
   jenkins-slave:
-    image: cjhuang/jenkins-slave
+    extends:
+      file: common.yml
+      service: jenkins-slave
     networks:
       my_net:
         ipv4_address: 172.18.0.3

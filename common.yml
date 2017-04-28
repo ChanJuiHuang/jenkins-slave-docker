@@ -1,0 +1,9 @@
+version: '2'
+services:
+  jenkins-master:
+    image: cjhuang/jenkins
+    volumes:
+      - [your home path]:/var/jenkins_home
+
+  jenkins-slave:
+    image: cjhuang/jenkins-slave
